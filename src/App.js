@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.css';
 
-class Project extends React.Component {
+class Test extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,13 +17,9 @@ class Project extends React.Component {
     fetch('http://uinames.com/api/?amount=5')
       .then(res => res.json())
       .then(people => {
-        this.setState(
-          {
-            isLoaded: true,
-            people
-          },
-          () => console.log(people)
-        );
+        this.setState({
+          people
+        });
       });
   };
 
@@ -70,7 +66,6 @@ class Project extends React.Component {
                   {person.name}
                 </li>
               ))}
-              {/* <li /> */}
             </ul>
           </div>
         </div>
@@ -79,8 +74,7 @@ class Project extends React.Component {
         </div>
       </div>
     );
-    // }
   }
 }
 
-export default Project;
+export default Test;
